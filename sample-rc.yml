@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: ReplicationController
+matadata:
+  name: sample-rc
+spec: 
+ replicas: 5
+ selector: 
+   app: nginx
+ template: 
+  matadata:
+    labels:
+     app: nginx
+  spec:
+   containers:
+     - image:  nginx
+       name: my-nginx
+       ports:
+        containerPort: 80
+
+     
